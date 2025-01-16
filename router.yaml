@@ -1,8 +1,8 @@
 # Configuration of the router's HTTP server
 # Default configuration for container
-# supergraph:
-#   # The socket address and port to listen on
-#   listen: 0.0.0.0:4000
+supergraph:
+  # The socket address and port to listen on
+  listen: 0.0.0.0:4000
 
 #
 # CORS (Cross Origin Resource Sharing)
@@ -12,3 +12,10 @@ cors:
   origins:
     - http://localhost:5173
     - https://studio.apollographql.com
+
+# pass Authentication headers from client requests to subgraphs
+headers:
+  all:
+    request:
+      - propagate:
+          named: cookie
