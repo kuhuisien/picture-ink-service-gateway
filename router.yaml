@@ -13,6 +13,9 @@ cors:
     - http://localhost:5173
     - https://studio.apollographql.com
   allow_credentials: true
+  allow_headers:
+    - Cookie
+    - Content-Type
 
 # pass Authentication headers from client requests to subgraphs
 headers:
